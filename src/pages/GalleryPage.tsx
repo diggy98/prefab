@@ -198,7 +198,7 @@ const GalleryPage: React.FC = () => {
                   {study.type === 'video' && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="bg-primary/90 text-white w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 ml-1\" fill="currentColor\" viewBox="0 0 24 24">
                           <path d="M8 5v14l11-7z"/>
                         </svg>
                       </div>
