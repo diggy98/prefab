@@ -31,15 +31,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        <div className="container mx-auto">
-          <div className="bg-primary hover:bg-primary-hover w-1/3 ml-0 py-6 px-8 flex items-center justify-between transition-colors duration-200">
-            <span className="text-white">See more</span>
-            <span className="text-white">&rarr;</span>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

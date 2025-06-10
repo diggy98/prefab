@@ -16,11 +16,7 @@ const HouseDesigns: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
               <h2 className="text-4xl md:text-5xl font-light text-white mb-6 leading-tight">
-                Create functional and stylish 
-                <span className="relative">
-                  modern buildings for you.
-                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-primary rounded-sm"></div>
-                </span>
+                Create functional and stylish modern buildings for you.
               </h2>
             </div>
             <div>
