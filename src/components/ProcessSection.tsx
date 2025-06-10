@@ -93,9 +93,6 @@ const ProcessSection: React.FC = () => {
           <div className="text-primary text-sm uppercase tracking-wider mb-4">OUR PROCESS</div>
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6 leading-tight">
             From Vision to Reality
-            <span className="relative">
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 border-2 border-primary rounded-sm"></div>
-            </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Our streamlined process ensures your dream home becomes reality with precision, 

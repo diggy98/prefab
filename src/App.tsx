@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import DesignsPage from './pages/DesignsPage';
 import GalleryPage from './pages/GalleryPage';
 import HouseDetailPage from './pages/HouseDetailPage';
 import LoungePage from './pages/LoungePage';
@@ -20,6 +21,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/designs" element={<DesignsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/house/:id" element={<HouseDetailPage />} />
             <Route path="/lounge" element={<LoungePage />} />
@@ -34,6 +36,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

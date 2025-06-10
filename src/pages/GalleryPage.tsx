@@ -1,20 +1,144 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { houseData, getCategories, getHousesByCategory } from '../data/houses';
 
 const GalleryPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<{ type: 'image' | 'video', src: string } | null>(null);
 
-  const categories = getCategories();
-  const filteredHouses = getHousesByCategory(selectedCategory);
+  const categories = ['ALL', 'COMPLETED PROJECTS', 'CONSTRUCTION PROCESS', 'INTERIORS', 'EXTERIORS'];
 
-  const openLightbox = (imageUrl: string) => {
-    setSelectedImage(imageUrl);
+  const caseStudies = [
+    {
+      id: 1,
+      title: 'Modern Family Home - Surrey',
+      category: 'COMPLETED PROJECTS',
+      type: 'image' as const,
+      thumbnail: '/Глеваха_1.jpg',
+      fullSrc: '/Глеваха_1.jpg',
+      description: 'A stunning 3-bedroom modular home completed in just 4 days',
+      details: {
+        size: '1,400 sq ft',
+        completion: '2024',
+        type: 'Modular',
+        location: 'Surrey, UK'
+      }
+    },
+    {
+      id: 2,
+      title: 'Skandy-Nordy Forest Retreat',
+      category: 'COMPLETED PROJECTS',
+      type: 'image' as const,
+      thumbnail: '/Skandy 120 front-1 2.png',
+      fullSrc: '/Skandy 120 front-1 2.png',
+      description: 'Nordic-inspired design nestled in natural woodland setting',
+      details: {
+        size: '2,200 sq ft',
+        completion: '2024',
+        type: 'Skandy-Nordy',
+        location: 'Lake District, UK'
+      }
+    },
+    {
+      id: 3,
+      title: 'Smart Home Assembly Process',
+      category: 'CONSTRUCTION PROCESS',
+      type: 'video' as const,
+      thumbnail: '/S-18-1.jpg',
+      fullSrc: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      description: 'Time-lapse of complete smart home assembly in 3 days',
+      details: {
+        size: '1,292 sq ft',
+        completion: '2024',
+        type: 'Smart',
+        location: 'Manchester, UK'
+      }
+    },
+    {
+      id: 4,
+      title: 'Modern Interior Design',
+      category: 'INTERIORS',
+      type: 'image' as const,
+      thumbnail: '/2p.jpg',
+      fullSrc: '/2p.jpg',
+      description: 'Contemporary interior with premium finishes and smart technology',
+      details: {
+        size: '1,900 sq ft',
+        completion: '2024',
+        type: 'Modern',
+        location: 'London, UK'
+      }
+    },
+    {
+      id: 5,
+      title: 'Factory Production Process',
+      category: 'CONSTRUCTION PROCESS',
+      type: 'video' as const,
+      thumbnail: '/render1.jpg',
+      fullSrc: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      description: 'Inside our precision manufacturing facility',
+      details: {
+        size: 'Various',
+        completion: '2024',
+        type: 'All Types',
+        location: 'Factory, UK'
+      }
+    },
+    {
+      id: 6,
+      title: 'Modern-B Architectural Excellence',
+      category: 'EXTERIORS',
+      type: 'image' as const,
+      thumbnail: '/prefab_homes_modern_b_80_front_perspective.jpg',
+      fullSrc: '/prefab_homes_modern_b_80_front_perspective.jpg',
+      description: 'Bold contemporary design with striking facade elements',
+      details: {
+        size: '1,700 sq ft',
+        completion: '2024',
+        type: 'Modern-B',
+        location: 'Birmingham, UK'
+      }
+    },
+    {
+      id: 7,
+      title: 'Luxury Interior Showcase',
+      category: 'INTERIORS',
+      type: 'image' as const,
+      thumbnail: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+      fullSrc: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+      description: 'Premium interior finishes and modern amenities',
+      details: {
+        size: '2,100 sq ft',
+        completion: '2024',
+        type: 'Modern',
+        location: 'Edinburgh, UK'
+      }
+    },
+    {
+      id: 8,
+      title: 'Modular Home Extension',
+      category: 'COMPLETED PROJECTS',
+      type: 'image' as const,
+      thumbnail: '/photo_2022-10-03-12.44.26.jpeg',
+      fullSrc: '/photo_2022-10-03-12.44.26.jpeg',
+      description: 'Seamless modular extension added to existing property',
+      details: {
+        size: '800 sq ft',
+        completion: '2024',
+        type: 'Modular',
+        location: 'Bristol, UK'
+      }
+    }
+  ];
+
+  const filteredCaseStudies = selectedCategory === 'ALL' 
+    ? caseStudies 
+    : caseStudies.filter(study => study.category === selectedCategory);
+
+  const openLightbox = (media: { type: 'image' | 'video', src: string }) => {
+    setSelectedMedia(media);
   };
 
   const closeLightbox = () => {
-    setSelectedImage(null);
+    setSelectedMedia(null);
   };
 
   return (
@@ -23,10 +147,10 @@ const GalleryPage: React.FC = () => {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-light text-gray-800 mb-6">House Gallery</h1>
+            <h1 className="text-5xl font-light text-gray-800 mb-6">Case Studies & Gallery</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our collection of high-performance prefab homes. Each design combines 
-              modern aesthetics with energy efficiency and sustainable construction.
+              Explore real projects, construction processes, and the quality craftsmanship 
+              that goes into every Prefab Home. See our work in action.
             </p>
           </div>
 
@@ -47,128 +171,137 @@ const GalleryPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Gallery Grid */}
+          {/* Case Studies Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredHouses.map((house, index) => {
-              const originalIndex = houseData.findIndex(h => h.name === house.name);
-              return (
-                <div key={index} className="group relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4 z-10 bg-blue-600 text-white py-2 px-4 text-sm font-medium">
-                    VAULT STANDARD
-                  </div>
+            {filteredCaseStudies.map((study) => (
+              <div key={study.id} className="group relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 rounded-lg">
+                {/* Media Type Badge */}
+                <div className="absolute top-4 left-4 z-10 bg-primary text-white py-1 px-3 text-xs font-medium rounded-sm">
+                  {study.type === 'video' ? 'VIDEO' : 'PHOTO'}
+                </div>
+                
+                {/* Category Badge */}
+                <div className="absolute top-4 right-4 z-10 bg-gray-900 text-white py-1 px-3 text-xs font-medium rounded-sm">
+                  {study.category}
+                </div>
+                
+                {/* Thumbnail */}
+                <div className="relative overflow-hidden h-64">
+                  <img 
+                    src={study.thumbnail} 
+                    alt={study.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer"
+                    onClick={() => openLightbox({ type: study.type, src: study.fullSrc })}
+                  />
                   
-                  {/* Category Badge */}
-                  <div className="absolute top-4 right-4 z-10 bg-primary text-white py-1 px-3 text-xs font-medium">
-                    {house.category}
-                  </div>
-                  
-                  {/* Image */}
-                  <div className="relative overflow-hidden h-80">
-                    <img 
-                      src={house.imageUrl} 
-                      alt={house.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer"
-                      onClick={() => openLightbox(house.imageUrl)}
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-                    
-                    {/* Overlay Info */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-xl font-semibold mb-2">{house.name}</h3>
-                      <p className="text-sm opacity-90">Click to view full size</p>
-                    </div>
-                  </div>
-
-                  {/* House Details */}
-                  <div className="p-6">
-                    <h3 className="text-2xl font-medium text-gray-800 mb-3">{house.name}</h3>
-                    
-                    {house.description && (
-                      <p className="text-gray-600 mb-3">{house.description}</p>
-                    )}
-                    
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Area:</span>
-                        <span className="font-medium">{house.squareFeet} ft² ({house.squareMeters} m²)</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Type:</span>
-                        <span className="font-medium">{house.type}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Category:</span>
-                        <span className="font-medium text-primary">{house.category}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Price:</span>
-                        <span className="font-bold text-primary text-lg">£{house.price.toLocaleString()}</span>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-4">
-                      <div className="flex items-center text-sm text-gray-600 mb-3">
-                        <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  {/* Video Play Button */}
+                  {study.type === 'video' && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-primary/90 text-white w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
                         </svg>
-                        Passive House Certified
                       </div>
-                      
-                      <Link 
-                        to={`/house/${originalIndex}`}
-                        className="block w-full bg-gray-900 text-white py-3 px-4 font-medium hover:bg-gray-800 transition-colors duration-200 text-center"
-                      >
-                        View Details &rarr;
-                      </Link>
+                    </div>
+                  )}
+                  
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                  
+                  {/* Overlay Info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm opacity-90">
+                      {study.type === 'video' ? 'Click to play video' : 'Click to view full size'}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{study.title}</h3>
+                  <p className="text-gray-600 mb-4">{study.description}</p>
+                  
+                  {/* Details Grid */}
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <span className="text-gray-500">Size:</span>
+                      <span className="font-medium ml-2">{study.details.size}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Type:</span>
+                      <span className="font-medium ml-2">{study.details.type}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Year:</span>
+                      <span className="font-medium ml-2">{study.details.completion}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Location:</span>
+                      <span className="font-medium ml-2">{study.details.location}</span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
           {/* Stats Section */}
-          <div className="mt-20 bg-gray-50 py-16 px-8">
+          <div className="mt-20 bg-gray-50 py-16 px-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Track Record</h3>
+              <p className="text-gray-600">Real results from real projects</p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">{houseData.length}+</div>
-                <div className="text-gray-600">House Designs</div>
+                <div className="text-4xl font-bold text-primary mb-2">150+</div>
+                <div className="text-gray-600">Completed Projects</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">3-5</div>
-                <div className="text-gray-600">Days Assembly</div>
+                <div className="text-4xl font-bold text-primary mb-2">98%</div>
+                <div className="text-gray-600">Client Satisfaction</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">10</div>
-                <div className="text-gray-600">Year Warranty</div>
+                <div className="text-4xl font-bold text-primary mb-2">4.2</div>
+                <div className="text-gray-600">Avg. Assembly Days</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">6</div>
-                <div className="text-gray-600">House Categories</div>
+                <div className="text-4xl font-bold text-primary mb-2">A+++</div>
+                <div className="text-gray-600">Energy Rating</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Lightbox Modal */}
-        {selectedImage && (
+        {selectedMedia && (
           <div 
-            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
             onClick={closeLightbox}
           >
-            <div className="relative max-w-4xl max-h-full">
+            <div className="relative max-w-6xl max-h-full w-full">
               <button
                 onClick={closeLightbox}
                 className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10"
               >
                 &times;
               </button>
-              <img 
-                src={selectedImage} 
-                alt="House design"
-                className="max-w-full max-h-full object-contain"
-              />
+              
+              {selectedMedia.type === 'image' ? (
+                <img 
+                  src={selectedMedia.src} 
+                  alt="Case study"
+                  className="max-w-full max-h-full object-contain mx-auto"
+                />
+              ) : (
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src={selectedMedia.src}
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Case study video"
+                  />
+                </div>
+              )}
             </div>
           </div>
         )}

@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         <nav className="hidden lg:block">
           <ul className="flex space-x-6">
             <li><Link to="/" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Home</Link></li>
-            <li><a href="/#designs" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Designs</a></li>
+            <li><Link to="/designs" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Designs</Link></li>
             
             {/* House Types Dropdown */}
             <li className="relative group">
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
           <div className="container mx-auto px-4 py-4">
             <ul className="space-y-4">
               <li><Link to="/" className="block text-gray-800 hover:text-primary transition-colors">Home</Link></li>
-              <li><a href="/#designs" className="block text-gray-800 hover:text-primary transition-colors">Designs</a></li>
+              <li><Link to="/designs" className="block text-gray-800 hover:text-primary transition-colors">Designs</Link></li>
               
               {/* Mobile House Types */}
               <li>

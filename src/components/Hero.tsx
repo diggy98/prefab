@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           <div className="max-w-xl">
             <p className="text-white text-sm uppercase tracking-wider mb-2">FROM PREFAB HOMES</p>
             <h1 className="text-4xl md:text-5xl text-white font-light mb-4">
-              Engineered for Efficiency. Built in Days.
+              Engineered for Efficiency Built in Days
             </h1>
             <p className="text-white text-xl mb-6">
               High-performance prefab homes with precision craftsmanship.
