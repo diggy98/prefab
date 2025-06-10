@@ -36,10 +36,10 @@ const Header: React.FC = () => {
             <img 
               src="/sharp_logo_high_res.png" 
               alt="Prefab Homes Logo" 
-              className="h-16 w-auto mr-4"
+              className="h-12 w-auto mr-3"
             />
             <div className="flex flex-col">
-              <span className={`text-2xl font-light tracking-wide transition-colors duration-200 ${textColor} group-hover:text-primary`}>
+              <span className={`text-lg font-light tracking-wide transition-colors duration-200 ${textColor} group-hover:text-primary`}>
                 PREFAB HOMES
               </span>
               <span className={`text-xs uppercase tracking-widest font-medium transition-colors duration-200 ${isHomePage && !scrolled ? 'text-white/80' : 'text-gray-500'} group-hover:text-primary`}>
