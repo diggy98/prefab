@@ -83,7 +83,7 @@ const HouseDesigns: React.FC = () => {
                     {/* Hover Content */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="text-center">
-                        <div className="text-white text-sm uppercase tracking-wider mb-2">< EXPLORE ></div>
+                        <div className="text-white text-sm uppercase tracking-wider mb-2">{'< EXPLORE >'}</div>
                         <div className="text-white font-light text-lg">{house.category}</div>
                         <div className="text-gray-300 text-sm mt-2">
                           {house.squareFeet} ft² • £{house.price.toLocaleString()}
