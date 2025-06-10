@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { houseData } from '../data/houses';
 
@@ -7,6 +7,11 @@ const SkandyNordyPage: React.FC = () => {
   
   // Filter only Skandy-Nordy category houses
   const skandyNordyHouses = houseData.filter(house => house.category === 'SKANDY-NORDY');
+
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openLightbox = (imageUrl: string) => {
     setSelectedImage(imageUrl);
@@ -32,11 +37,11 @@ const SkandyNordyPage: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-start z-20">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl">
-              <div className="text-green-400 text-sm uppercase tracking-wider mb-4">SKANDY-NORDY COLLECTION</div>
+              <div className="text-primary text-sm uppercase tracking-wider mb-4">SKANDY-NORDY COLLECTION</div>
               <h1 className="text-5xl md:text-6xl text-white font-light mb-6 leading-tight">
                 Nordic Harmony
                 <span className="relative">
-                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-green-400 rounded-sm"></div>
+                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-primary rounded-sm"></div>
                 </span>
               </h1>
               <p className="text-white text-xl mb-8 leading-relaxed">
@@ -46,7 +51,7 @@ const SkandyNordyPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="#models" 
-                  className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 font-medium transition-colors duration-200 rounded-sm"
+                  className="inline-block bg-primary hover:bg-primary-hover text-white px-8 py-3 font-medium transition-colors duration-200 rounded-sm"
                 >
                   Explore Nordic Designs &rarr;
                 </a>
@@ -67,11 +72,11 @@ const SkandyNordyPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-green-600 text-sm uppercase tracking-wider mb-4">NORDIC PHILOSOPHY</div>
+              <div className="text-primary text-sm uppercase tracking-wider mb-4">NORDIC PHILOSOPHY</div>
               <h2 className="text-4xl font-light text-gray-800 mb-6">
                 Embracing Simplicity
                 <span className="relative">
-                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-green-600 rounded-sm"></div>
+                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-primary rounded-sm"></div>
                 </span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -81,7 +86,7 @@ const SkandyNordyPage: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                     <span className="text-sm font-bold">1</span>
                   </div>
                   <div>
@@ -90,7 +95,7 @@ const SkandyNordyPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                     <span className="text-sm font-bold">2</span>
                   </div>
                   <div>
@@ -99,7 +104,7 @@ const SkandyNordyPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                     <span className="text-sm font-bold">3</span>
                   </div>
                   <div>
@@ -116,8 +121,8 @@ const SkandyNordyPage: React.FC = () => {
                 className="w-full h-96 object-cover rounded-lg shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-green-600 rounded-sm opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-green-600 rounded-sm opacity-30"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary rounded-sm opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-primary rounded-sm opacity-30"></div>
             </div>
           </div>
         </div>
@@ -127,14 +132,14 @@ const SkandyNordyPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="text-green-600 text-sm uppercase tracking-wider mb-4">NORDIC FEATURES</div>
+            <div className="text-primary text-sm uppercase tracking-wider mb-4">NORDIC FEATURES</div>
             <h2 className="text-4xl font-light text-gray-800 mb-6">Sustainable by Design</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="bg-green-600/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                <svg className="w-10 h-10 text-green-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-primary/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <svg className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
@@ -143,8 +148,8 @@ const SkandyNordyPage: React.FC = () => {
             </div>
             
             <div className="text-center group">
-              <div className="bg-green-600/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                <svg className="w-10 h-10 text-green-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-primary/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <svg className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                 </svg>
               </div>
@@ -153,8 +158,8 @@ const SkandyNordyPage: React.FC = () => {
             </div>
             
             <div className="text-center group">
-              <div className="bg-green-600/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                <svg className="w-10 h-10 text-green-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-primary/10 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <svg className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
@@ -169,7 +174,7 @@ const SkandyNordyPage: React.FC = () => {
       <section id="models" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="text-green-400 text-sm uppercase tracking-wider mb-4">SKANDY-NORDY MODELS</div>
+            <div className="text-primary text-sm uppercase tracking-wider mb-4">SKANDY-NORDY MODELS</div>
             <h2 className="text-4xl font-light text-white mb-6">Nordic Craftsmanship</h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Each model embodies the essence of Scandinavian design philosophy and Nordic craftsmanship.
@@ -196,7 +201,7 @@ const SkandyNordyPage: React.FC = () => {
                       
                       {/* Category Badge */}
                       <div className="absolute top-6 left-6">
-                        <div className="bg-green-600 text-white py-2 px-4 text-sm font-medium rounded-sm">
+                        <div className="bg-primary text-white py-2 px-4 text-sm font-medium rounded-sm">
                           SKANDY-NORDY
                         </div>
                       </div>
@@ -215,7 +220,7 @@ const SkandyNordyPage: React.FC = () => {
 
                     {/* Content */}
                     <div className="p-8">
-                      <h3 className="text-white text-2xl font-light mb-3 group-hover:text-green-400 transition-colors duration-300">
+                      <h3 className="text-white text-2xl font-light mb-3 group-hover:text-primary transition-colors duration-300">
                         {house.name}
                       </h3>
                       
@@ -229,14 +234,14 @@ const SkandyNordyPage: React.FC = () => {
                         <span className="text-gray-500">
                           {house.squareMeters} m² • {house.type}
                         </span>
-                        <span className="text-green-400 font-medium">
+                        <span className="text-primary font-medium">
                           £{house.price.toLocaleString()}
                         </span>
                       </div>
 
                       <Link 
                         to={`/house/${originalIndex}`}
-                        className="block w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 font-medium transition-colors duration-200 text-center rounded-sm"
+                        className="block w-full bg-primary hover:bg-primary-hover text-white py-3 px-4 font-medium transition-colors duration-200 text-center rounded-sm"
                       >
                         View Details &rarr;
                       </Link>
@@ -250,19 +255,19 @@ const SkandyNordyPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-green-700">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-light text-white mb-6">Embrace Nordic Living</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Experience the tranquility and sustainability of Scandinavian design with our carefully crafted Skandy-Nordy collection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-3 font-medium hover:bg-gray-100 transition-colors duration-200 rounded-sm">
+            <button className="bg-white text-primary px-8 py-3 font-medium hover:bg-gray-100 transition-colors duration-200 rounded-sm">
               Schedule Visit
             </button>
             <Link 
               to="/gallery"
-              className="border border-white text-white px-8 py-3 font-medium hover:bg-white hover:text-green-600 transition-colors duration-200 rounded-sm"
+              className="border border-white text-white px-8 py-3 font-medium hover:bg-white hover:text-primary transition-colors duration-200 rounded-sm"
             >
               View All Models
             </Link>
