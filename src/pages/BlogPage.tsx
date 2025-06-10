@@ -11,7 +11,7 @@ const BlogPage: React.FC = () => {
       date: "March 15, 2024",
       readTime: "5 min read",
       category: "Energy Efficiency",
-      image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+      image: "/Skandy 120 front-1 2.png",
       content: `Energy efficiency has become more than a buzzword in modern construction—it's a necessity. As energy prices continue to rise and environmental concerns grow, homeowners are looking for better ways to build. But what exactly makes an energy-efficient home different? And why are so many people choosing this route?
 
 In my years working with prefab homes, I've seen firsthand how much of a difference energy efficiency makes—not just in terms of money saved, but in quality of life. The concept goes beyond insulation and smart meters. It's a combination of thoughtful design, high-performance materials, and a long-term view on comfort and sustainability.
@@ -28,12 +28,54 @@ Energy efficiency is no longer a luxury—it's becoming the standard. And with t
     },
     {
       id: 2,
-      title: "Modular vs Traditional Construction: A Complete Comparison",
-      excerpt: "Exploring the key differences between modular and traditional construction methods, from cost to quality to timeline.",
+      title: "SIP Technology: The Future of Efficient, Strong, and Fast Building",
+      excerpt: "Discover how Structural Insulated Panels are revolutionizing construction with superior strength, efficiency, and speed.",
+      date: "March 12, 2024",
+      readTime: "6 min read",
+      category: "Technology",
+      image: "/2p.jpg",
+      content: `When I first encountered SIP construction, I was skeptical. Coming from a background in traditional wood-frame building, I didn't understand how something as simple as a panel could replace so many structural elements. But after just a few projects, I was convinced. SIPs are one of the most efficient and innovative technologies to enter the construction world in the past few decades.
+
+SIP stands for Structural Insulated Panel. At first glance, it looks like a thick, solid board. But it's much more than that. Each SIP is made of an insulating foam core sandwiched between two rigid boards, usually oriented strand board (OSB). This simple configuration creates a panel that is both lightweight and incredibly strong.
+
+One of the most impressive things about SIPs is how quickly a structure can be assembled. A building that would take months with traditional methods can be raised in just a few weeks—or even days—when using SIP panels. Because they're manufactured in a factory under controlled conditions, there's minimal on-site adjustment required. Everything fits together with surprising precision, which helps avoid delays and mistakes.
+
+What really sets SIPs apart, however, is their performance. The insulation value is much higher than conventional wall systems. This means lower heating and cooling requirements, fewer drafts, and a more comfortable indoor environment year-round. I've seen homeowners report 50% or more savings on their energy bills compared to similar-sized homes built with traditional materials.
+
+Durability is another benefit. Despite their light weight, SIPs are incredibly strong and resilient. Many SIP homes have performed well in extreme weather conditions—something increasingly important as we face more climate-related events. Whether it's high winds, heavy snow, or moisture, SIPs offer solid resistance and long-term stability.
+
+From a design perspective, SIPs offer flexibility as well. They can be used in small cabins, large homes, and even commercial buildings. Architects love them for their clean lines and minimalist potential, while builders appreciate the speed and efficiency.
+
+In short, SIP technology is not just a passing trend. It's a smart response to modern construction challenges, and it's redefining the way we think about building.`
+    },
+    {
+      id: 3,
+      title: "SIP Construction Methods: Exploring the Different Ways to Build Smarter",
+      excerpt: "Learn about the various SIP construction approaches and find the method that best suits your project goals and timeline.",
       date: "March 10, 2024",
       readTime: "7 min read",
       category: "Construction",
-      image: "https://images.pexels.com/photos/7031405/pexels-photo-7031405.jpeg",
+      image: "/render1.jpg",
+      content: `If you've decided to build with SIPs, you've already made a great choice. But what many people don't realize is that there are several different ways to approach SIP construction, depending on your goals, timeline, and budget. Over the years, I've worked on a variety of SIP projects, and each one followed a slightly different path—even though they all started with the same core technology.
+
+The first and most straightforward method is using SIP kits. These are pre-manufactured panel sets that are delivered to your building site ready to assemble. It's a great option for people who want to manage part of the process themselves or work with a smaller crew. Everything comes labeled and pre-cut, and it's almost like assembling a life-sized puzzle. While it still requires construction knowledge, it significantly reduces the time and effort needed compared to building from raw materials.
+
+Another popular approach is the hybrid system. Here, the main structural elements—typically the walls and roof—are made from SIPs, while other parts of the building use more conventional techniques. This can be a good compromise if you're working with a particular design or need to manage costs. For example, combining SIP walls with a traditional truss roof can save money while still delivering energy performance where it matters most.
+
+Finally, there's the full-service or turnkey SIP build. This is what many prefab companies (including ours) specialize in. It means we take care of everything—from design and panel manufacturing to on-site construction and finishing work. It's the fastest and most stress-free way to build with SIPs, especially for clients who want reliability and a clear project timeline. In most cases, a fully built SIP home can be completed in a fraction of the time it would take using other methods.
+
+Choosing the right method depends on your level of involvement, budget, and desired timeline. But whichever route you choose, the advantages remain the same: strong, energy-efficient construction that will last for decades.
+
+SIP building is not only about how the panels are made—it's about how you use them. And in the right hands, SIPs open the door to faster, greener, smarter homes that are ready for the future.`
+    },
+    {
+      id: 4,
+      title: "Modular vs Traditional Construction: A Complete Comparison",
+      excerpt: "Exploring the key differences between modular and traditional construction methods, from cost to quality to timeline.",
+      date: "March 8, 2024",
+      readTime: "8 min read",
+      category: "Construction",
+      image: "/Глеваха_1.jpg",
       content: `When considering a new home, one of the biggest decisions you'll face is choosing between modular and traditional construction. Both methods have their advantages, but understanding the differences can help you make the best choice for your situation.
 
 **Construction Timeline**
@@ -54,13 +96,13 @@ Modular construction is inherently more sustainable. Factory construction produc
 The choice between modular and traditional construction ultimately depends on your priorities: speed, cost predictability, and environmental considerations favor modular, while unlimited customization and traditional building methods favor conventional construction.`
     },
     {
-      id: 3,
+      id: 5,
       title: "Smart Home Technology: The Future of Prefab Living",
       excerpt: "How integrated smart home systems are revolutionizing the prefab industry and creating homes that adapt to your lifestyle.",
       date: "March 5, 2024",
       readTime: "6 min read",
       category: "Technology",
-      image: "https://images.pexels.com/photos/7534177/pexels-photo-7534177.jpeg",
+      image: "/S-18-1.jpg",
       content: `The integration of smart home technology in prefab construction represents a perfect marriage of efficiency and innovation. As homes become more connected, prefab construction offers unique advantages for implementing comprehensive smart home systems.
 
 **Factory Integration Advantages**
@@ -110,9 +152,6 @@ The future of prefab living is smart, connected, and responsive to our needs. As
             <div className="text-primary text-sm uppercase tracking-wider mb-4">INSIGHTS & EXPERTISE</div>
             <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
               Prefab Homes Blog
-              <span className="relative">
-                <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-primary rounded-sm"></div>
-              </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Discover the latest insights, trends, and expert advice in prefab construction, 
