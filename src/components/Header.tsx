@@ -68,18 +68,18 @@ const Header: React.FC = () => {
             </li>
             
             <li><Link to="/gallery" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Gallery</Link></li>
-            <li><a href="#contact" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Contact</a></li>
+            <li><Link to="/contact" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Contact</Link></li>
             <li><Link to="/blog" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Blog</Link></li>
           </ul>
         </nav>
         
         <div className="hidden md:block">
-          <a 
-            href="#consultation" 
+          <Link 
+            to="/contact" 
             className="bg-primary hover:bg-primary-hover text-white px-6 py-2 text-sm font-medium transition-colors duration-200 rounded-sm"
           >
             Schedule Consultation
-          </a>
+          </Link>
         </div>
         
         <button 
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
               </li>
               
               <li><Link to="/gallery" className="block text-gray-800 hover:text-primary transition-colors">Gallery</Link></li>
-              <li><a href="#contact" className="block text-gray-800 hover:text-primary transition-colors">Contact</a></li>
+              <li><Link to="/contact" className="block text-gray-800 hover:text-primary transition-colors">Contact</Link></li>
               <li><Link to="/blog" className="block text-gray-800 hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>

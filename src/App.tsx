@@ -9,6 +9,8 @@ import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
 import AboutPage from './pages/AboutPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 import HouseDetailPage from './pages/HouseDetailPage';
 import LoungePage from './pages/LoungePage';
 import SmartPage from './pages/SmartPage';
@@ -31,6 +33,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
             <Route path="/house/:id" element={<HouseDetailPage />} />
             <Route path="/lounge" element={<LoungePage />} />
             <Route path="/smart" element={<SmartPage />} />

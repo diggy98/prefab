@@ -74,8 +74,8 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between">
             <p>&copy; 2025 Prefab Homes. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+              <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
