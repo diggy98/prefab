@@ -32,12 +32,20 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHomePage ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center group">
             <img 
               src="/sharp_logo_high_res.png" 
               alt="Prefab Homes Logo" 
-              className="h-16 w-auto"
+              className="h-16 w-auto mr-4"
             />
+            <div className="flex flex-col">
+              <span className={`text-2xl font-light tracking-wide transition-colors duration-200 ${textColor} group-hover:text-primary`}>
+                PREFAB HOMES
+              </span>
+              <span className={`text-xs uppercase tracking-widest font-medium transition-colors duration-200 ${isHomePage && !scrolled ? 'text-white/80' : 'text-gray-500'} group-hover:text-primary`}>
+                Engineered for Efficiency
+              </span>
+            </div>
           </Link>
         </div>
         
