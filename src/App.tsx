@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import DesignsPage from './pages/DesignsPage';
 import GalleryPage from './pages/GalleryPage';
+import BlogPage from './pages/BlogPage';
 import HouseDetailPage from './pages/HouseDetailPage';
 import LoungePage from './pages/LoungePage';
 import SmartPage from './pages/SmartPage';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/designs" element={<DesignsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/house/:id" element={<HouseDetailPage />} />
             <Route path="/lounge" element={<LoungePage />} />
             <Route path="/smart" element={<SmartPage />} />

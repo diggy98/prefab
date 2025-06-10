@@ -11,9 +11,6 @@ const TurnKey: React.FC = () => {
               <div className="text-primary text-sm uppercase tracking-wider mb-4">COMPLETE SOLUTION</div>
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
                 Turn-key Finish
-                <span className="relative">
-                  <div className="absolute -bottom-2 left-0 w-8 h-8 border-2 border-primary rounded-sm"></div>
-                </span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Superior craftsmanship, no compromises. From foundation to final fixtures, 
