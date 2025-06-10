@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import HouseTypes from '../components/HouseTypes';
 import HouseDesigns from '../components/HouseDesigns';
 import TurnKey from '../components/TurnKey';
+import ProcessSection from '../components/ProcessSection';
 import Interiors from '../components/Interiors';
 
 const HomePage: React.FC = () => {
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
       <HouseTypes />
       <HouseDesigns />
       <TurnKey />
+      <ProcessSection />
       <Interiors />
     </>
   );

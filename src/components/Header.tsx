@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <img 
               src="/sharp_logo_high_res.png" 
               alt="Prefab Homes Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
         </div>
@@ -67,9 +67,7 @@ const Header: React.FC = () => {
               </div>
             </li>
             
-            <li><a href="/#turnkey" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Turn-key Finish</a></li>
             <li><Link to="/gallery" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Gallery</Link></li>
-            <li><a href="#videos" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Video References</a></li>
             <li><a href="#contact" className={`${textColor} ${hoverColor} transition-colors duration-200`}>Contact</a></li>
             <li><a href="#news" className={`${textColor} ${hoverColor} transition-colors duration-200`}>News</a></li>
           </ul>
@@ -77,12 +75,10 @@ const Header: React.FC = () => {
         
         <div className="hidden md:block">
           <a 
-            href="#catalogue" 
-            className="bg-primary hover:bg-primary-hover text-white px-4 py-3 flex items-center justify-center flex-col transition-colors duration-200"
+            href="#consultation" 
+            className="bg-primary hover:bg-primary-hover text-white px-6 py-2 text-sm font-medium transition-colors duration-200 rounded-sm"
           >
-            <span>Order</span>
-            <span>Catalogue</span>
-            <span className="mt-2">&rarr;</span>
+            Order Consultation
           </a>
         </div>
         
@@ -118,9 +114,7 @@ const Header: React.FC = () => {
                 </ul>
               </li>
               
-              <li><a href="/#turnkey" className="block text-gray-800 hover:text-primary transition-colors">Turn-key Finish</a></li>
               <li><Link to="/gallery" className="block text-gray-800 hover:text-primary transition-colors">Gallery</Link></li>
-              <li><a href="#videos" className="block text-gray-800 hover:text-primary transition-colors">Video References</a></li>
               <li><a href="#contact" className="block text-gray-800 hover:text-primary transition-colors">Contact</a></li>
               <li><a href="#news" className="block text-gray-800 hover:text-primary transition-colors">News</a></li>
             </ul>
